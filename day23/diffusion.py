@@ -78,6 +78,10 @@ def round():
     if proposed_moves == []:
         return True
 
+    # check if at least one value is unique in proposed_moves
+    if not any(proposed_moves.count(move) == 1 for move in proposed_moves):
+        return True
+
     moves = 0
 
     copy_elf = elves.copy()
@@ -85,6 +89,11 @@ def round():
         if elf.move(proposed_moves):
             moves += 1
     print(moves)
+
+
+    # this does the same thing as above but just another check
+    if moves == 0:
+        return True
     
     return False
 
