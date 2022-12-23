@@ -98,7 +98,7 @@ def round():
     return False
 
 rounds = 0
-for i in range(506):
+for i in range(10000):
     rounds += 1
     print('done with round', rounds)
     if round():
